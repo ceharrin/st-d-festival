@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="St. Dionysios Greek Festival 2026 Menu — Authentic Greek entrées, pastries, and beverages. Souvlakia, gyros, baklava, Mythos beer, and more.">
+  <meta name="theme-color" content="#1B4F9A">
+
+  <title>Menu | Greek Festival 2026 · St. Dionysios</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            greek: {
+              blue:      '#1B4F9A',
+              'blue-dk': '#0F3270',
+              'blue-lt': '#EBF2FC',
+              gold:      '#C9960C',
+              'gold-lt': '#F5E7B2',
+            }
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-body bg-white text-gray-900 antialiased">
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════════ -->
+  <nav
+    x-data="{ open: false }"
+    class="sticky top-0 z-50 bg-greek-blue shadow-lg"
+    aria-label="Main navigation"
+  >
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+
+        <a href="index.html" class="font-display text-white text-sm font-bold tracking-wide flex items-center gap-2 leading-tight">
+          <span aria-hidden="true">🏛️</span>
+          <span>St. Dionysios Greek Orthodox Church<br class="hidden sm:block">Greek Festival 2026</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-6">
+          <a href="index.html#hours"    class="text-white/85 hover:text-white font-medium transition-colors">Hours</a>
+          <a href="index.html#dancing"  class="text-white/85 hover:text-white font-medium transition-colors">Dancing</a>
+          <a href="index.html#location" class="text-white/85 hover:text-white font-medium transition-colors">Location</a>
+          <a href="menu.html"           class="text-white font-semibold border-b-2 border-white pb-0.5">Menu</a>
+          <a href="https://stdionysios.org" target="_blank" rel="noopener noreferrer"
+             class="text-white/85 hover:text-white font-medium transition-colors">Our Church ↗</a>
+        </div>
+
+        <button
+          @click="open = !open"
+          :aria-expanded="open.toString()"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation menu"
+          class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+        >
+          <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="mobile-menu"
+      x-show="open"
+      x-transition:enter="transition ease-out duration-150"
+      x-transition:enter-start="opacity-0 -translate-y-2"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      class="md:hidden bg-greek-blue-dk border-t border-white/10"
+    >
+      <div class="px-4 py-3 space-y-1">
+        <a @click="open=false" href="index.html#hours"    class="block text-white/85 hover:text-white hover:bg-white/10 py-2 px-3 rounded-lg font-medium transition-colors">Hours</a>
+        <a @click="open=false" href="index.html#dancing"  class="block text-white/85 hover:text-white hover:bg-white/10 py-2 px-3 rounded-lg font-medium transition-colors">Dancing</a>
+        <a @click="open=false" href="index.html#location" class="block text-white/85 hover:text-white hover:bg-white/10 py-2 px-3 rounded-lg font-medium transition-colors">Location</a>
+        <a href="menu.html"                               class="block text-white bg-white/10 py-2 px-3 rounded-lg font-semibold">Menu</a>
+        <a href="https://stdionysios.org" target="_blank" rel="noopener noreferrer"
+           class="block text-white/85 hover:text-white hover:bg-white/10 py-2 px-3 rounded-lg font-medium transition-colors">Our Church ↗</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE HEADER
+  ══════════════════════════════════════════════════ -->
+  <header class="bg-greek-blue-dk text-white py-16 px-4 text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 pointer-events-none" aria-hidden="true"
+         style="background-image: repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+    <div class="relative z-10 max-w-2xl mx-auto">
+      <div class="inline-block bg-white text-greek-blue text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-widest uppercase">
+        Greek A La Carte
+      </div>
+      <h1 class="font-display text-5xl md:text-6xl font-bold mb-3">Our Menu</h1>
+      <p class="text-white/70 text-lg font-display italic">
+        Authentic Greek cuisine prepared with tradition and love
+      </p>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════
+       STICKY SECTION JUMP LINKS
+  ══════════════════════════════════════════════════ -->
+  <nav class="sticky top-16 z-40 bg-white border-b border-gray-100 shadow-sm" aria-label="Menu sections">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex gap-1 overflow-x-auto py-3 scrollbar-hide">
+        <a href="#entrees"   class="flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:bg-greek-blue-lt hover:text-greek-blue transition-colors">Entrées</a>
+        <a href="#sides"     class="flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:bg-greek-blue-lt hover:text-greek-blue transition-colors">Sides &amp; Starters</a>
+        <a href="#pastries"  class="flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:bg-greek-blue-lt hover:text-greek-blue transition-colors">Pastries</a>
+        <a href="#beverages" class="flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold text-gray-600 hover:bg-greek-blue-lt hover:text-greek-blue transition-colors">Beverages</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <main class="max-w-5xl mx-auto px-4 py-16 space-y-20">
+
+    <!-- ─────────────────────────────────────────────
+         ENTRÉES
+    ───────────────────────────────────────────────── -->
+    <section id="entrees" aria-labelledby="entrees-heading">
+      <div class="mb-10">
+        <h2 id="entrees-heading" class="font-display text-4xl font-bold text-greek-blue">Entrées</h2>
+        <div class="w-12 h-1 bg-greek-blue/20 mt-3 rounded-full" aria-hidden="true"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Souvlakia — Photo: Unsplash (pork skewers) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=600&q=80"
+                 alt="Souvlakia — skewered pork grilled over charcoal"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Souvlakia</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🍢</span>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Skewered marinated pork grilled over charcoal, served with rice
+            </p>
+          </div>
+        </article>
+
+        <!-- Kota Oreganato — Photo: Unsplash (lemon baked chicken) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1612909940181-a75f657fb8c5?auto=format&fit=crop&w=600&q=80"
+                 alt="Kota Oreganato — baked chicken with lemon and herbs"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Kota Oreganato</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🍗</span>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Baked chicken with lemon and Greek seasoning, served with rice
+            </p>
+          </div>
+        </article>
+
+        <!-- Padakia — Photo: Pexels (lamb chops with herb crust) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.pexels.com/photos/11795607/pexels-photo-11795607.jpeg?auto=compress&cs=tinysrgb&w=600"
+                 alt="Padakia — hand-cut Greek lamb chops"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Padakia</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🥩</span>
+            </div>
+            <p class="text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Lamb Chops</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Hand-cut lamb chops grilled to perfection, served with rice and beans
+            </p>
+          </div>
+        </article>
+
+        <!-- Gyro Sandwich — Photo: Unsplash (pita wraps) — SIGNATURE -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden relative">
+          <div class="absolute top-3 left-4 z-10 bg-greek-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+            ★ Signature
+          </div>
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1734974121561-11aee7d3cebd?auto=format&fit=crop&w=600&q=80"
+                 alt="Gyro Sandwich — pita with gyro meat, vegetables and tzatziki"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Gyro Sandwich</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🫓</span>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Pita bread with seasoned gyro meat, fresh vegetables, and creamy tzatziki sauce
+            </p>
+          </div>
+        </article>
+
+        <!-- Dolmathes — Photo: Unsplash (stuffed grape leaves) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1636141186543-476c0defe0f0?auto=format&fit=crop&w=600&q=80"
+                 alt="Dolmathes — stuffed grape leaves with beef, rice and herbs"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Dolmathes</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🍃</span>
+            </div>
+            <p class="text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Stuffed Grape Leaves</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Tender grape leaves stuffed with seasoned beef, rice, and Greek herbs and spices
+            </p>
+          </div>
+        </article>
+
+        <!-- Pastitsio — Photo: Pexels (layered baked pasta with béchamel) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.pexels.com/photos/5662767/pexels-photo-5662767.jpeg?auto=compress&cs=tinysrgb&w=600"
+                 alt="Pastitsio — Greek baked pasta with béchamel sauce"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Pastitsio</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🍝</span>
+            </div>
+            <p class="text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Greek Baked Pasta</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Layered Greek pasta with seasoned ground beef, topped with rich béchamel sauce
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────
+         SIDES & STARTERS
+    ───────────────────────────────────────────────── -->
+    <section id="sides" aria-labelledby="sides-heading">
+      <div class="mb-10">
+        <h2 id="sides-heading" class="font-display text-4xl font-bold text-greek-blue">Sides &amp; Starters</h2>
+        <div class="w-12 h-1 bg-greek-blue/20 mt-3 rounded-full" aria-hidden="true"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Horiatiki Salad — Photo: Unsplash (Greek salad with feta) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1745126010010-da1c6f5300a9?auto=format&fit=crop&w=600&q=80"
+                 alt="Horiatiki Salad — Greek salad with olives, tomatoes, cucumber and feta"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Horiatiki Salad</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🥗</span>
+            </div>
+            <p class="text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Greek Village Salad</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Fresh tomatoes, cucumbers, Kalamata olives, peppers, and generous feta cheese
+            </p>
+            <span class="inline-block mt-3 text-xs bg-green-50 text-green-700 font-semibold px-2 py-0.5 rounded-full">🌿 Vegetarian</span>
+          </div>
+        </article>
+
+        <!-- Spanakopita / Tiropita — Photo: Pexels (spanakopita pastry) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.pexels.com/photos/18884737/pexels-photo-18884737.jpeg?auto=compress&cs=tinysrgb&w=600"
+                 alt="Spanakopita — Greek spinach and feta phyllo pastry"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Spanakopita <span class="text-gray-400 font-normal">or</span> Tiropita</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🥧</span>
+            </div>
+            <p class="text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Phyllo Pastry Pies</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Flaky phyllo pastry filled with spinach &amp; feta <em>(Spanakopita)</em> or savory cheese <em>(Tiropita)</em>
+            </p>
+            <span class="inline-block mt-3 text-xs bg-green-50 text-green-700 font-semibold px-2 py-0.5 rounded-full">🌿 Vegetarian</span>
+          </div>
+        </article>
+
+        <!-- Saganaki — Photo: Pexels (Greek mezze with saganaki) — SIGNATURE -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden relative">
+          <div class="absolute top-3 left-4 z-10 bg-greek-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+            ★ Signature
+          </div>
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.pexels.com/photos/11568812/pexels-photo-11568812.jpeg?auto=compress&cs=tinysrgb&w=600"
+                 alt="Saganaki — Greek flaming cheese with pita and mezze"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Saganaki</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🔥</span>
+            </div>
+            <p class="text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Flaming Cheese</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Pan-fried Greek cheese, flambéed tableside and served with warm pita.
+              <em class="text-gray-400">Opa!</em>
+            </p>
+            <span class="inline-block mt-3 text-xs bg-green-50 text-green-700 font-semibold px-2 py-0.5 rounded-full">🌿 Vegetarian</span>
+          </div>
+        </article>
+
+        <!-- Fasolakia Yahni — Photo: Pexels (steaming green beans) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.pexels.com/photos/2942331/pexels-photo-2942331.jpeg?auto=compress&cs=tinysrgb&w=600"
+                 alt="Fasolakia Yahni — Greek stewed green beans in tomato sauce"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Fasolakia Yahni</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🌿</span>
+            </div>
+            <p class="text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Green Beans</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Green beans slow-cooked in a savory Greek tomato sauce
+            </p>
+            <span class="inline-block mt-3 text-xs bg-green-50 text-green-700 font-semibold px-2 py-0.5 rounded-full">🌿 Vegetarian</span>
+          </div>
+        </article>
+
+        <!-- Rice Pilaf — Photo: Unsplash (rice pilaf with almonds) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1747518596416-2da5e5218d83?auto=format&fit=crop&w=600&q=80"
+                 alt="Rice Pilaf — fluffy seasoned Greek rice"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Rice Pilaf</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🌾</span>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Fluffy seasoned rice, a classic Greek side dish
+            </p>
+            <span class="inline-block mt-3 text-xs bg-green-50 text-green-700 font-semibold px-2 py-0.5 rounded-full">🌿 Vegetarian</span>
+          </div>
+        </article>
+
+        <!-- Greek Potatoes — Photo: Unsplash (roasted potatoes with herbs) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1633959639799-6d3f66e05710?auto=format&fit=crop&w=600&q=80"
+                 alt="Greek Potatoes — oven-roasted lemon potatoes with herbs"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Greek Potatoes</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🥔</span>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Roasted Greek-style lemon potatoes baked to golden perfection
+            </p>
+            <span class="inline-block mt-3 text-xs bg-green-50 text-green-700 font-semibold px-2 py-0.5 rounded-full">🌿 Vegetarian</span>
+          </div>
+        </article>
+
+        <!-- Pita Bread — Photo: Pexels (stacked pita breads) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.pexels.com/photos/6419753/pexels-photo-6419753.jpeg?auto=compress&cs=tinysrgb&w=600"
+                 alt="Pita Bread — traditional freshly baked Greek flatbread"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Pita Bread</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🫓</span>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Warm, soft traditional Greek flatbread — perfect alongside any dish
+            </p>
+            <span class="inline-block mt-3 text-xs bg-green-50 text-green-700 font-semibold px-2 py-0.5 rounded-full">🌿 Vegetarian</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────
+         PASTRIES
+    ───────────────────────────────────────────────── -->
+    <section id="pastries" aria-labelledby="pastries-heading">
+      <div class="mb-10">
+        <h2 id="pastries-heading" class="font-display text-4xl font-bold text-greek-blue">Greek Pastries</h2>
+        <div class="w-12 h-1 bg-greek-blue/20 mt-3 rounded-full" aria-hidden="true"></div>
+        <p class="text-gray-500 mt-4">Handmade with care — Greek desserts are a festival tradition</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Baklava — Photo: Pexels (close-up baklava with pistachio) — SIGNATURE -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden relative">
+          <div class="absolute top-3 left-4 z-10 bg-greek-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+            ★ Signature
+          </div>
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.pexels.com/photos/20183046/pexels-photo-20183046.jpeg?auto=compress&cs=tinysrgb&w=600"
+                 alt="Baklava — crispy phyllo with walnuts and honey syrup"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Baklava</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🍯</span>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Crispy phyllo layered with chopped walnuts and drenched in honey syrup — a timeless classic
+            </p>
+          </div>
+        </article>
+
+        <!-- Galaktoboureko — Photo: Pexels (milk custard dessert) -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.pexels.com/photos/18543469/pexels-photo-18543469.jpeg?auto=compress&cs=tinysrgb&w=600"
+                 alt="Galaktoboureko — semolina custard baked in phyllo with syrup"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Galaktoboureko</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🥮</span>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Creamy semolina custard baked in golden phyllo, finished with fragrant syrup
+            </p>
+          </div>
+        </article>
+
+        <!-- Portokalopita — local photo -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="images/portokalopita.jpg"
+                 alt="Portokalopita — Greek orange cake soaked in citrus syrup"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Portokalopita</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🍊</span>
+            </div>
+            <p class="text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Greek Orange Cake</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Moist phyllo and orange cake soaked in sweet citrus syrup
+            </p>
+          </div>
+        </article>
+
+        <!-- Kourambiethes — local photo -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="images/kourambiethes.jpg"
+                 alt="Kourambiethes — Greek butter cookies dusted with powdered sugar"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Kourambiethes</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🍪</span>
+            </div>
+            <p class="text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Greek Butter Cookies</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Buttery almond shortbread cookies dusted generously in powdered sugar
+            </p>
+          </div>
+        </article>
+
+        <!-- Baklava Cheesecake — local photo -->
+        <article class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="h-44 overflow-hidden">
+            <img src="images/baklava-cheesecake.jpg"
+                 alt="Baklava Cheesecake — creamy cheesecake with baklava topping and honey drizzle"
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-display text-xl font-bold text-gray-900">Baklava Cheesecake</h3>
+              <span class="text-xl flex-shrink-0" aria-hidden="true">🎂</span>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              A delightful fusion — creamy cheesecake with a crispy baklava-style topping and honey drizzle
+            </p>
+          </div>
+        </article>
+
+        <!-- And Many More -->
+        <article class="bg-greek-blue rounded-2xl shadow-sm overflow-hidden">
+          <div class="h-44 flex items-center justify-center opacity-30 text-8xl" aria-hidden="true">✨</div>
+          <div class="p-5 -mt-16">
+            <h3 class="font-display text-xl font-bold text-white mb-2">And Many More!</h3>
+            <p class="text-white/75 text-sm leading-relaxed">
+              We offer over a dozen traditional Greek pastries — come discover them all at the festival!
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────
+         BEVERAGES
+    ───────────────────────────────────────────────── -->
+    <section id="beverages" aria-labelledby="beverages-heading">
+      <div class="mb-10">
+        <h2 id="beverages-heading" class="font-display text-4xl font-bold text-greek-blue">Beverages</h2>
+        <div class="w-12 h-1 bg-greek-blue/20 mt-3 rounded-full" aria-hidden="true"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Alcoholic -->
+        <div class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span aria-hidden="true">🍷</span> Alcoholic Beverages
+          </h3>
+          <ul class="space-y-4" role="list">
+            <li class="flex items-start gap-3">
+              <span class="text-greek-blue/50 mt-0.5 font-bold text-lg leading-none" aria-hidden="true">—</span>
+              <div>
+                <span class="font-semibold text-gray-800">Mythos Beer</span>
+                <p class="text-gray-500 text-sm">Authentic imported Greek lager</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-greek-blue/50 mt-0.5 font-bold text-lg leading-none" aria-hidden="true">—</span>
+              <div>
+                <span class="font-semibold text-gray-800">Greek Liqueur Flights</span>
+                <p class="text-gray-500 text-sm">Sample a selection of traditional Greek spirits</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-greek-blue/50 mt-0.5 font-bold text-lg leading-none" aria-hidden="true">—</span>
+              <div>
+                <span class="font-semibold text-gray-800">Imported Ouzo</span>
+                <p class="text-gray-500 text-sm">The iconic anise-flavored Greek spirit</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-greek-blue/50 mt-0.5 font-bold text-lg leading-none" aria-hidden="true">—</span>
+              <div>
+                <span class="font-semibold text-gray-800">Malamatina Retsina</span>
+                <p class="text-gray-500 text-sm">Traditional Greek white wine with a distinctive resin flavor</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-greek-blue/50 mt-0.5 font-bold text-lg leading-none" aria-hidden="true">—</span>
+              <div>
+                <span class="font-semibold text-gray-800">Feast Red &amp; White Wines</span>
+                <p class="text-gray-500 text-sm">Imported wines perfect for the celebration</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-greek-blue/50 mt-0.5 font-bold text-lg leading-none" aria-hidden="true">—</span>
+              <div>
+                <span class="font-semibold text-gray-800">Quirk Hard Seltzer</span>
+                <p class="text-gray-500 text-sm">Light, refreshing hard seltzer</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Non-Alcoholic -->
+        <div class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span aria-hidden="true">🥤</span> Non-Alcoholic
+          </h3>
+          <ul class="space-y-4" role="list">
+            <li class="flex items-start gap-3">
+              <span class="text-greek-blue/50 mt-0.5 font-bold text-lg leading-none" aria-hidden="true">—</span>
+              <div>
+                <span class="font-semibold text-gray-800">Bottled Water</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-greek-blue/50 mt-0.5 font-bold text-lg leading-none" aria-hidden="true">—</span>
+              <div>
+                <span class="font-semibold text-gray-800">Soft Drinks</span>
+                <p class="text-gray-500 text-sm">Assorted sodas available</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+
+  <!-- ═══════════════════════════════════════════════
+       BACK TO FESTIVAL BANNER
+  ══════════════════════════════════════════════════ -->
+  <section class="py-16 px-4 bg-greek-blue-lt">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="font-display text-3xl font-bold text-greek-blue mb-3">Ready to Join Us?</h2>
+      <p class="text-gray-600 mb-8">See the full schedule, hours, and how to find us.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-2 bg-greek-blue hover:bg-greek-blue-dk text-white font-semibold px-8 py-3 rounded-full transition-colors shadow-md focus:outline-none focus:ring-4 focus:ring-greek-blue/40"
+        >
+          ← Back to Festival Home
+        </a>
+        <a
+          href="index.html#location"
+          class="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-greek-blue border border-greek-blue/20 font-semibold px-8 py-3 rounded-full transition-colors shadow-sm focus:outline-none focus:ring-4 focus:ring-greek-blue/40"
+        >
+          Get Directions
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════ -->
+  <footer class="bg-greek-blue-dk text-white py-14 px-4">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
+        <div>
+          <h4 class="font-display text-xl font-bold mb-3">Greek Festival 2026</h4>
+          <p class="text-white/60 text-sm leading-relaxed">
+            Celebrating Greek culture, tradition, and community at
+            St. Dionysios Greek Orthodox Church in Overland Park, KS.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-xs uppercase tracking-widest text-white/40 mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-white/75 text-sm">
+            <li><a href="index.html#hours"    class="hover:text-white transition-colors">Festival Hours</a></li>
+            <li><a href="index.html#dancing"  class="hover:text-white transition-colors">Dance Schedule</a></li>
+            <li><a href="menu.html"           class="hover:text-white transition-colors">Menu</a></li>
+            <li><a href="index.html#location" class="hover:text-white transition-colors">Location &amp; Directions</a></li>
+            <li><a href="https://stdionysios.org" class="hover:text-white transition-colors">Our Church ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-xs uppercase tracking-widest text-white/40 mb-4">Contact</h4>
+          <address class="not-italic text-white/75 text-sm space-y-2">
+            <p>St. Dionysios Greek Orthodox Church</p>
+            <p>8100 W. 95th Street<br>Overland Park, KS 66212</p>
+            <a href="tel:+19133417373" class="hover:text-white transition-colors block">(913) 341-7373</a>
+            <a href="https://stdionysios.org" class="hover:text-white transition-colors block">stdionysios.org ↗</a>
+          </address>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-6 text-center text-white/35 text-xs">
+        &copy; 2026 St. Dionysios Greek Orthodox Church &mdash; All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
