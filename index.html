@@ -482,11 +482,11 @@
         x-data="{
           current: 0,
           photos: [
-            { src: 'images/3.jpg',  alt: 'Young men performing synchronized high kicks at the festival' },
-            { src: 'images/4.jpg',  alt: 'Acrobatic flip during a Greek dance performance' },
-            { src: 'images/6.jpg',  alt: 'Dancer in full traditional Greek costume performing on stage' },
-            { src: 'images/7.jpg',  alt: 'Couple dancing together in traditional Greek costumes' },
-            { src: 'images/10.jpg', alt: 'Women in ornate traditional Greek costumes dancing' }
+            { src: 'images/3.jpg',  alt: 'Young men performing synchronized high kicks at the festival', pos: 'object-center' },
+            { src: 'images/4.jpg',  alt: 'Acrobatic flip during a Greek dance performance',              pos: 'object-center' },
+            { src: 'images/6.jpg',  alt: 'Dancer in full traditional Greek costume performing on stage', pos: 'object-center' },
+            { src: 'images/7.jpg',  alt: 'Couple dancing together in traditional Greek costumes',        pos: 'object-top' },
+            { src: 'images/10.jpg', alt: 'Women in ornate traditional Greek costumes dancing',           pos: 'object-center' }
           ],
           timer: null,
           start() { this.timer = setInterval(() => { this.current = (this.current + 1) % this.photos.length; }, 5000); },
@@ -513,7 +513,7 @@
             x-transition:leave-end="opacity-0"
             class="absolute inset-0"
           >
-            <img :src="photo.src" :alt="photo.alt" class="w-full h-full object-cover" loading="lazy">
+            <img :src="photo.src" :alt="photo.alt" :class="'w-full h-full object-cover ' + photo.pos" loading="lazy">
           </div>
         </template>
 
