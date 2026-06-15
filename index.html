@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="St. Dionysios Greek Festival 2026 — June 12–14 in Overland Park, KS. Authentic Greek food, pastries, music & dance. Friday 4–9 PM, Saturday 11 AM–9 PM, Sunday 11 AM–5 PM.">
+  <meta name="description" content="Thank you for joining the St. Dionysios Greek Festival 2026! We'll see you again in 2027 in Overland Park, KS.">
   <meta name="theme-color" content="#1B4F9A">
 
-  <title>Greek Festival 2026 | St. Dionysios Greek Orthodox Church</title>
+  <title>Thank You | Greek Festival 2026 · St. Dionysios</title>
 
-  <!-- Fonts: Playfair Display for headings, Inter for body -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS (no build step required) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -21,11 +19,9 @@
         extend: {
           colors: {
             greek: {
-              blue:       '#1B4F9A',
-              'blue-dk':  '#0F3270',
-              'blue-lt':  '#EBF2FC',
-              gold:       '#C9960C',
-              'gold-lt':  '#F5E7B2',
+              blue:      '#1B4F9A',
+              'blue-dk': '#0F3270',
+              'blue-lt': '#EBF2FC',
             }
           },
           fontFamily: {
@@ -37,107 +33,27 @@
     }
   </script>
 
-  <!-- Alpine.js — lightweight reactivity for mobile menu & tabs (~7 KB gzipped) -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
-
-  <!-- Schema.org: helps Google show this event in rich search results -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Festival",
-    "name": "St. Dionysios Greek Festival 2026",
-    "description": "Annual Greek cultural festival featuring authentic food, pastries, music, and traditional dance performances.",
-    "startDate": "2026-06-12",
-    "endDate": "2026-06-14",
-    "location": {
-      "@type": "Place",
-      "name": "St. Dionysios Greek Orthodox Church",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "8100 W. 95th Street",
-        "addressLocality": "Overland Park",
-        "addressRegion": "KS",
-        "postalCode": "66212",
-        "addressCountry": "US"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "St. Dionysios Greek Orthodox Church",
-      "url": "https://stdionysios.org",
-      "telephone": "+19133417373"
-    },
-    "url": "https://stdionysios.org/festival/"
-  }
-  </script>
 </head>
 
 <body class="font-body bg-white text-gray-900 antialiased">
 
   <!-- ═══════════════════════════════════════════════
-       NAVIGATION
+       NAVIGATION — simplified, festival is over
   ══════════════════════════════════════════════════ -->
-  <nav
-    x-data="{ open: false }"
-    class="sticky top-0 z-50 bg-greek-blue shadow-lg"
-    aria-label="Main navigation"
-  >
+  <nav class="sticky top-0 z-50 bg-greek-blue shadow-lg" aria-label="Main navigation">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex items-center justify-between h-16">
-
-        <!-- Logo / wordmark -->
-        <a href="index.html" class="font-display text-white text-sm font-bold tracking-wide flex items-center gap-2 leading-tight">
+        <a href="thanks.html" class="font-display text-white text-sm font-bold tracking-wide flex items-center gap-2 leading-tight">
           <span aria-hidden="true">🏛️</span>
           <span>St. Dionysios Greek Orthodox Church<br class="hidden sm:block">Greek Festival 2026</span>
         </a>
-
-        <!-- Desktop links -->
-        <div class="hidden md:flex items-center gap-6">
-          <a href="#hours"   class="text-white/85 hover:text-white font-medium transition-colors">Hours</a>
-          <a href="#dancing" class="text-white/85 hover:text-white font-medium transition-colors">Dancing</a>
-          <a href="#location"class="text-white/85 hover:text-white font-medium transition-colors">Location</a>
-          <a href="menu.html"class="text-white/85 hover:text-white font-medium transition-colors">Menu</a>
-          <a href="https://stdionysios.org" target="_blank" rel="noopener noreferrer"
-             class="text-white/85 hover:text-white font-medium transition-colors">Our Church ↗</a>
-        </div>
-
-        <!-- Mobile hamburger -->
-        <button
-          @click="open = !open"
-          :aria-expanded="open.toString()"
-          aria-controls="mobile-menu"
-          aria-label="Toggle navigation menu"
-          class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
-        >
-          <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-          <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div
-      id="mobile-menu"
-      x-show="open"
-      x-transition:enter="transition ease-out duration-150"
-      x-transition:enter-start="opacity-0 -translate-y-2"
-      x-transition:enter-end="opacity-100 translate-y-0"
-      x-transition:leave="transition ease-in duration-100"
-      x-transition:leave-start="opacity-100 translate-y-0"
-      x-transition:leave-end="opacity-0 -translate-y-2"
-      class="md:hidden bg-greek-blue-dk border-t border-white/10"
-    >
-      <div class="px-4 py-3 space-y-1">
-        <a @click="open=false" href="#hours"    class="block text-white/85 hover:text-white hover:bg-white/10 py-2 px-3 rounded-lg font-medium transition-colors">Hours</a>
-        <a @click="open=false" href="#dancing"  class="block text-white/85 hover:text-white hover:bg-white/10 py-2 px-3 rounded-lg font-medium transition-colors">Dancing</a>
-        <a @click="open=false" href="#location" class="block text-white/85 hover:text-white hover:bg-white/10 py-2 px-3 rounded-lg font-medium transition-colors">Location</a>
-        <a href="menu.html"                     class="block text-white/85 hover:text-white hover:bg-white/10 py-2 px-3 rounded-lg font-medium transition-colors">Menu</a>
-        <a href="https://stdionysios.org" target="_blank" rel="noopener noreferrer"
-           class="block text-white/85 hover:text-white hover:bg-white/10 py-2 px-3 rounded-lg font-medium transition-colors">Our Church ↗</a>
+        <a
+          href="https://stdionysios.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-white/85 hover:text-white font-medium transition-colors text-sm"
+        >Our Church ↗</a>
       </div>
     </div>
   </nav>
@@ -145,348 +61,114 @@
 
   <!-- ═══════════════════════════════════════════════
        HERO
-       Replace images/hero.jpg with a festival photo.
-       The overlay keeps text legible over any image.
   ══════════════════════════════════════════════════ -->
-  <section class="relative min-h-[55vh] flex items-center justify-center overflow-hidden bg-greek-blue-dk">
+  <section class="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-greek-blue-dk">
 
-    <!-- Background photo — Greek food spread (Unsplash, free to use) -->
+    <!-- Background — best dance photo -->
     <div class="absolute inset-0" aria-hidden="true">
       <img
-        src="images/paidakia.jpg"
+        src="images/10.jpg"
         alt=""
-        class="w-full h-full object-cover opacity-55"
+        class="w-full h-full object-cover opacity-30"
         fetchpriority="high"
       >
-      <!-- Gradient: stronger at top/bottom so nav and content stay legible -->
-      <div class="absolute inset-0 bg-gradient-to-b from-greek-blue-dk/75 via-greek-blue-dk/45 to-greek-blue-dk/80"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-greek-blue-dk/80 via-greek-blue-dk/50 to-greek-blue-dk/90"></div>
     </div>
 
-    <div class="relative z-10 text-center px-4 py-14 max-w-4xl mx-auto">
+    <div class="relative z-10 text-center px-4 py-20 max-w-3xl mx-auto">
 
-      <!-- Eyebrow badge -->
-      <div class="inline-block bg-white text-greek-blue text-xs font-semibold px-4 py-1.5 rounded-full mb-5 tracking-widest uppercase shadow-sm">
+      <!-- Greek thank you -->
+      <div class="inline-block bg-white text-greek-blue text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-widest uppercase shadow-sm">
         June 12–14, 2026 · Overland Park, KS
       </div>
 
-      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-        Opa!<br>It's Greek Festival Time!
+      <h1 class="font-display text-6xl md:text-7xl font-bold text-white mb-4 leading-tight">
+        Ευχαριστούμε!
       </h1>
 
-      <p class="text-white/80 text-base md:text-lg mb-8 font-display italic">
-        St. Dionysios Greek Orthodox Church
+      <p class="font-display text-2xl md:text-3xl italic text-white/80 mb-6">
+        Thank You for Joining Us
       </p>
 
-      <!-- Hours at a glance -->
-      <div class="flex flex-wrap justify-center gap-3 mb-8" role="list" aria-label="Festival hours">
-        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-center" role="listitem">
-          <div class="text-white/60 font-bold text-xs uppercase tracking-widest mb-1">Friday</div>
-          <div class="font-display text-2xl font-bold text-white leading-tight">June 12</div>
-          <div class="text-white/70 text-sm mt-1">4 PM – 9 PM</div>
-        </div>
-        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-center" role="listitem">
-          <div class="text-white/60 font-bold text-xs uppercase tracking-widest mb-1">Saturday</div>
-          <div class="font-display text-2xl font-bold text-white leading-tight">June 13</div>
-          <div class="text-white/70 text-sm mt-1">11 AM – 9 PM</div>
-        </div>
-        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-center" role="listitem">
-          <div class="text-white/60 font-bold text-xs uppercase tracking-widest mb-1">Sunday</div>
-          <div class="font-display text-2xl font-bold text-white leading-tight">June 14</div>
-          <div class="text-white/70 text-sm mt-1">11 AM – 5 PM</div>
+      <p class="text-white/70 text-lg leading-relaxed max-w-xl mx-auto mb-10">
+        The 2026 St. Dionysios Greek Festival was a beautiful celebration of food,
+        dance, and community. We are so grateful for everyone who joined us.
+      </p>
+
+      <!-- 2027 teaser -->
+      <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-5">
+        <span class="text-3xl" aria-hidden="true">🗓️</span>
+        <div class="text-left">
+          <div class="text-white/60 text-xs font-bold uppercase tracking-widest mb-0.5">Coming Soon</div>
+          <div class="font-display text-2xl font-bold text-white">See You in 2027!</div>
         </div>
       </div>
-
-      <!-- Primary CTAs -->
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="menu.html"
-           class="bg-white text-greek-blue hover:bg-blue-50 font-semibold px-7 py-3 rounded-full text-base transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform focus:outline-none focus:ring-4 focus:ring-white/50">
-          View Menu
-        </a>
-        <a href="#location"
-           class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-3 rounded-full text-base transition-all focus:outline-none focus:ring-4 focus:ring-white/30">
-          Get Directions
-        </a>
-      </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/50" aria-hidden="true">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-      </svg>
     </div>
   </section>
 
 
   <!-- ═══════════════════════════════════════════════
-       WELCOME / HIGHLIGHTS
+       THANK YOU MESSAGE
   ══════════════════════════════════════════════════ -->
   <section class="py-20 px-4 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-
-      <h2 class="font-display text-4xl font-bold text-greek-blue mb-4">Welcome to the Festival</h2>
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-display text-4xl font-bold text-greek-blue mb-4">A Message of Gratitude</h2>
       <div class="w-16 h-1 bg-greek-blue/20 mx-auto mb-8 rounded-full" aria-hidden="true"></div>
-
-      <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
-        Join us for a celebration of Greek culture, cuisine, and community.
-        Enjoy authentic Greek food prepared with love, watch traditional dance performances,
-        and experience the warmth of the Greek Orthodox community right here in Overland Park.
+      <p class="text-gray-600 text-lg leading-relaxed mb-6">
+        To everyone who came out to enjoy authentic Greek food, watched our dancers perform,
+        and shared in the spirit of our community — thank you from the bottom of our hearts.
+        Your presence makes this festival the joyful celebration it is.
       </p>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        A heartfelt thank you also to our volunteers, sponsors, and everyone at
+        St. Dionysios Greek Orthodox Church who worked tirelessly to bring this event to life.
+        <em class="text-greek-blue font-medium">Opa!</em>
+      </p>
+    </div>
 
-      <!-- Four highlights -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
-        <div class="text-center group">
-          <div class="text-5xl mb-3 transition-transform group-hover:scale-110 duration-200" aria-hidden="true">🍽️</div>
-          <div class="font-semibold text-gray-800">Authentic Food</div>
-          <div class="text-sm text-gray-500 mt-1">Traditional Greek cuisine</div>
-        </div>
-        <div class="text-center group">
-          <div class="text-5xl mb-3 transition-transform group-hover:scale-110 duration-200" aria-hidden="true">💃</div>
-          <div class="font-semibold text-gray-800">Live Dancing</div>
-          <div class="text-sm text-gray-500 mt-1">Traditional performances</div>
-        </div>
-        <div class="text-center group">
-          <div class="text-5xl mb-3 transition-transform group-hover:scale-110 duration-200" aria-hidden="true">🍯</div>
-          <div class="font-semibold text-gray-800">Greek Pastries</div>
-          <div class="text-sm text-gray-500 mt-1">Baklava & so much more</div>
-        </div>
-        <div class="text-center group">
-          <div class="text-5xl mb-3 transition-transform group-hover:scale-110 duration-200" aria-hidden="true">🍺</div>
-          <div class="font-semibold text-gray-800">Greek Drinks</div>
-          <div class="text-sm text-gray-500 mt-1">Mythos, Ouzo & wine</div>
-        </div>
+    <!-- Three highlights -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mt-14">
+      <div class="text-center p-6 bg-greek-blue-lt rounded-2xl">
+        <div class="text-5xl mb-3" aria-hidden="true">🍽️</div>
+        <div class="font-display text-xl font-bold text-greek-blue mb-1">Authentic Food</div>
+        <div class="text-gray-500 text-sm">Souvlakia, gyros, baklava and so much more</div>
+      </div>
+      <div class="text-center p-6 bg-greek-blue rounded-2xl">
+        <div class="text-5xl mb-3" aria-hidden="true">💃</div>
+        <div class="font-display text-xl font-bold text-white mb-1">Live Performances</div>
+        <div class="text-white/70 text-sm">Traditional Greek dance across all three days</div>
+      </div>
+      <div class="text-center p-6 bg-greek-blue-lt rounded-2xl">
+        <div class="text-5xl mb-3" aria-hidden="true">🫶</div>
+        <div class="font-display text-xl font-bold text-greek-blue mb-1">Community</div>
+        <div class="text-gray-500 text-sm">Friends, families, and neighbors coming together</div>
       </div>
     </div>
   </section>
 
 
   <!-- ═══════════════════════════════════════════════
-       FESTIVAL HOURS
+       PHOTO SLIDER — relive the memories
   ══════════════════════════════════════════════════ -->
-  <section id="hours" class="py-20 px-4 bg-greek-blue-lt" aria-labelledby="hours-heading">
-    <div class="max-w-5xl mx-auto">
+  <section class="py-20 px-4 bg-greek-blue-lt" aria-labelledby="memories-heading">
+    <div class="max-w-4xl mx-auto">
 
-      <div class="text-center mb-12">
-        <h2 id="hours-heading" class="font-display text-4xl font-bold text-greek-blue">Festival Hours</h2>
+      <div class="text-center mb-10">
+        <h2 id="memories-heading" class="font-display text-4xl font-bold text-greek-blue">Festival Memories</h2>
         <div class="w-16 h-1 bg-greek-blue/20 mx-auto mt-4 rounded-full" aria-hidden="true"></div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-
-        <!-- Friday -->
-        <article class="bg-white rounded-2xl shadow-md p-8 text-center border-t-4 border-greek-blue">
-          <div class="text-greek-blue font-bold text-xs uppercase tracking-widest mb-2">Day One</div>
-          <h3 class="font-display text-3xl font-bold text-gray-900 mb-1">Friday</h3>
-          <p class="font-display text-xl font-bold text-greek-blue mb-1">June 12</p>
-          <div class="w-8 h-px bg-gray-200 mx-auto my-5" aria-hidden="true"></div>
-          <p class="text-2xl font-semibold text-greek-blue">4:00 PM</p>
-          <p class="text-gray-400 text-sm my-2" aria-hidden="true">to</p>
-          <p class="text-2xl font-semibold text-greek-blue">9:00 PM</p>
-        </article>
-
-        <!-- Saturday (featured) -->
-        <article class="bg-greek-blue rounded-2xl shadow-xl p-8 text-center border-t-4 border-white/40 md:scale-105 relative">
-          <div class="text-white/70 font-bold text-xs uppercase tracking-widest mb-2">Day Two</div>
-          <h3 class="font-display text-3xl font-bold text-white mb-1">Saturday</h3>
-          <p class="font-display text-xl font-bold text-white mb-1">June 13</p>
-          <div class="w-8 h-px bg-white/20 mx-auto my-5" aria-hidden="true"></div>
-          <p class="text-2xl font-semibold text-white">11:00 AM</p>
-          <p class="text-white/50 text-sm my-2" aria-hidden="true">to</p>
-          <p class="text-2xl font-semibold text-white">9:00 PM</p>
-          <div class="mt-5 inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-            Most Performances
-          </div>
-        </article>
-
-        <!-- Sunday -->
-        <article class="bg-white rounded-2xl shadow-md p-8 text-center border-t-4 border-greek-blue">
-          <div class="text-greek-blue font-bold text-xs uppercase tracking-widest mb-2">Day Three</div>
-          <h3 class="font-display text-3xl font-bold text-gray-900 mb-1">Sunday</h3>
-          <p class="font-display text-xl font-bold text-greek-blue mb-1">June 14</p>
-          <div class="w-8 h-px bg-gray-200 mx-auto my-5" aria-hidden="true"></div>
-          <p class="text-2xl font-semibold text-greek-blue">11:00 AM</p>
-          <p class="text-gray-400 text-sm my-2" aria-hidden="true">to</p>
-          <p class="text-2xl font-semibold text-greek-blue">5:00 PM</p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════
-       DANCE PERFORMANCES
-  ══════════════════════════════════════════════════ -->
-  <section id="dancing" class="py-20 px-4 bg-white" aria-labelledby="dancing-heading">
-    <div class="max-w-4xl mx-auto">
-
-      <div class="text-center mb-12">
-        <h2 id="dancing-heading" class="font-display text-4xl font-bold text-greek-blue">Dance Performances</h2>
-        <div class="w-16 h-1 bg-greek-blue/20 mx-auto mt-4 mb-6 rounded-full" aria-hidden="true"></div>
-        <p class="text-gray-500 text-lg">Experience traditional Greek dance — multiple performances every day</p>
-      </div>
-
-      <!-- Day tab switcher -->
-      <div x-data="{ day: 'saturday' }">
-
-        <!-- Tab buttons -->
-        <div class="flex rounded-xl bg-gray-100 p-1 mb-8" role="tablist" aria-label="Select a day">
-          <button
-            role="tab"
-            :aria-selected="day === 'friday'"
-            @click="day = 'friday'"
-            :class="day === 'friday'
-              ? 'bg-greek-blue text-white shadow'
-              : 'text-gray-500 hover:text-gray-800'"
-            class="flex-1 py-3 px-4 rounded-lg font-semibold text-sm md:text-base transition-all focus:outline-none focus:ring-2 focus:ring-greek-blue focus:ring-offset-2 focus:ring-offset-gray-100"
-          >Friday</button>
-          <button
-            role="tab"
-            :aria-selected="day === 'saturday'"
-            @click="day = 'saturday'"
-            :class="day === 'saturday'
-              ? 'bg-greek-blue text-white shadow'
-              : 'text-gray-500 hover:text-gray-800'"
-            class="flex-1 py-3 px-4 rounded-lg font-semibold text-sm md:text-base transition-all focus:outline-none focus:ring-2 focus:ring-greek-blue focus:ring-offset-2 focus:ring-offset-gray-100"
-          >Saturday</button>
-          <button
-            role="tab"
-            :aria-selected="day === 'sunday'"
-            @click="day = 'sunday'"
-            :class="day === 'sunday'
-              ? 'bg-greek-blue text-white shadow'
-              : 'text-gray-500 hover:text-gray-800'"
-            class="flex-1 py-3 px-4 rounded-lg font-semibold text-sm md:text-base transition-all focus:outline-none focus:ring-2 focus:ring-greek-blue focus:ring-offset-2 focus:ring-offset-gray-100"
-          >Sunday</button>
-        </div>
-
-        <!-- Friday panels -->
-        <div
-          role="tabpanel"
-          x-show="day === 'friday'"
-          x-transition:enter="transition ease-out duration-200"
-          x-transition:enter-start="opacity-0 translate-y-1"
-          x-transition:enter-end="opacity-100 translate-y-0"
-        >
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">4:30 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Afternoon</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">6:00 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Evening</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">7:15 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Evening</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">8:15 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Evening</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Saturday panels -->
-        <div
-          role="tabpanel"
-          x-show="day === 'saturday'"
-          x-transition:enter="transition ease-out duration-200"
-          x-transition:enter-start="opacity-0 translate-y-1"
-          x-transition:enter-end="opacity-100 translate-y-0"
-        >
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">11:00 AM</div>
-              <div class="text-gray-500 text-sm mt-1">Morning</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">12:30 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Afternoon</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">1:30 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Afternoon</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">3:00 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Afternoon</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">4:30 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Afternoon</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">6:00 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Evening</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">7:15 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Evening</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">8:00 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Evening</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sunday panels -->
-        <div
-          role="tabpanel"
-          x-show="day === 'sunday'"
-          x-transition:enter="transition ease-out duration-200"
-          x-transition:enter-start="opacity-0 translate-y-1"
-          x-transition:enter-end="opacity-100 translate-y-0"
-        >
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">11:30 AM</div>
-              <div class="text-gray-500 text-sm mt-1">Morning</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">12:30 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Afternoon</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">1:30 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Afternoon</div>
-            </div>
-            <div class="bg-greek-blue-lt rounded-xl p-7 text-center">
-              <div class="text-3xl mb-3" aria-hidden="true">💃</div>
-              <div class="font-display text-2xl font-bold text-greek-blue">3:00 PM</div>
-              <div class="text-gray-500 text-sm mt-1">Afternoon</div>
-            </div>
-          </div>
-        </div>
-      </div><!-- /x-data tabs -->
-
-      <!-- Dance photo slider -->
       <div
         x-data="{
           current: 0,
           photos: [
-            { src: 'images/3.jpg',  alt: 'Young men performing synchronized high kicks at the festival', pos: 'object-center' },
-            { src: 'images/4.jpg',  alt: 'Acrobatic flip during a Greek dance performance',              pos: 'object-center' },
-            { src: 'images/6.jpg',  alt: 'Dancer in full traditional Greek costume performing on stage', pos: 'object-center' },
-            { src: 'images/7.jpg',  alt: 'Couple dancing together in traditional Greek costumes',        pos: 'object-top' },
-            { src: 'images/10.jpg', alt: 'Women in ornate traditional Greek costumes dancing',           pos: 'object-center' }
+            { src: 'images/3.jpg',  alt: 'Young men performing synchronized high kicks',            pos: 'object-center' },
+            { src: 'images/4.jpg',  alt: 'Acrobatic flip during a Greek dance performance',         pos: 'object-center' },
+            { src: 'images/5.jpg',  alt: 'Dancers with arms extended in a formal performance line', pos: 'object-center' },
+            { src: 'images/6.jpg',  alt: 'Dancer in full traditional Greek costume',                pos: 'object-center' },
+            { src: 'images/7.jpg',  alt: 'Couple dancing in traditional Greek costumes',            pos: 'object-top'    },
+            { src: 'images/9.jpg',  alt: 'Dancers in colorful traditional costumes on stage',       pos: 'object-center' },
+            { src: 'images/10.jpg', alt: 'Women in ornate traditional Greek costumes dancing',      pos: 'object-center' }
           ],
           timer: null,
           start() { this.timer = setInterval(() => { this.current = (this.current + 1) % this.photos.length; }, 5000); },
@@ -498,8 +180,8 @@
         x-init="start()"
         @mouseenter="stop()"
         @mouseleave="start()"
-        class="mt-10 relative rounded-2xl overflow-hidden shadow-lg aspect-video bg-greek-blue-dk"
-        aria-label="Dance performance photo gallery"
+        class="relative rounded-2xl overflow-hidden shadow-lg aspect-video bg-greek-blue-dk"
+        aria-label="Festival photo gallery"
       >
         <!-- Slides -->
         <template x-for="(photo, index) in photos" :key="index">
@@ -547,7 +229,6 @@
               :class="current === index ? 'bg-white w-6' : 'bg-white/45 w-2 hover:bg-white/70'"
               class="h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
               :aria-label="`Photo ${index + 1} of ${photos.length}`"
-              :aria-selected="current === index"
               role="tab"
             ></button>
           </template>
@@ -558,99 +239,25 @@
 
 
   <!-- ═══════════════════════════════════════════════
-       MENU CALL-TO-ACTION BANNER
+       SEE YOU IN 2027
   ══════════════════════════════════════════════════ -->
-  <section class="py-20 px-4 bg-greek-blue" aria-labelledby="menu-cta-heading">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 id="menu-cta-heading" class="font-display text-4xl font-bold text-white mb-4">
-        Taste the Flavors of Greece
-      </h2>
-      <p class="text-white/90 text-lg mb-8 max-w-xl mx-auto">
-        Souvlakia, gyros, flaming saganaki, baklava, and so much more —
-        explore our full menu before you arrive.
+  <section class="py-20 px-4 bg-greek-blue">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="text-6xl mb-6" aria-hidden="true">🏛️</div>
+      <h2 class="font-display text-5xl font-bold text-white mb-4">See You in 2027!</h2>
+      <p class="text-white/75 text-lg leading-relaxed mb-10">
+        The St. Dionysios Greek Festival will return next year with more food,
+        more dancing, and more of the community spirit you love.
+        Stay connected through our church website for updates.
       </p>
       <a
-        href="menu.html"
-        class="inline-block bg-white text-greek-blue font-bold px-10 py-4 rounded-full text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform transition-all focus:outline-none focus:ring-4 focus:ring-white/50"
+        href="https://stdionysios.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 bg-white text-greek-blue font-bold px-10 py-4 rounded-full text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform transition-all focus:outline-none focus:ring-4 focus:ring-white/40"
       >
-        View the Full Menu →
+        Visit Our Church Website →
       </a>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════
-       LOCATION
-  ══════════════════════════════════════════════════ -->
-  <section id="location" class="py-20 px-4 bg-white" aria-labelledby="location-heading">
-    <div class="max-w-5xl mx-auto">
-
-      <div class="text-center mb-12">
-        <h2 id="location-heading" class="font-display text-4xl font-bold text-greek-blue">Find Us</h2>
-        <div class="w-16 h-1 bg-greek-blue/20 mx-auto mt-4 rounded-full" aria-hidden="true"></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-
-        <!-- Embedded map
-             To generate your own embed URL:
-             1. Go to maps.google.com and search the address
-             2. Click Share → Embed a map → Copy HTML
-             3. Paste the src URL below -->
-        <div class="rounded-2xl overflow-hidden shadow-lg aspect-video bg-greek-blue-lt">
-          <iframe
-            src="https://maps.google.com/maps?q=8100+W+95th+St%2C+Overland+Park%2C+KS+66212&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Map showing location of St. Dionysios Greek Orthodox Church at 8100 W. 95th Street, Overland Park, KS"
-          ></iframe>
-        </div>
-
-        <!-- Info card -->
-        <div class="space-y-7">
-
-          <div>
-            <h3 class="font-display text-2xl font-bold text-greek-blue mb-2">
-              St. Dionysios Greek Orthodox Church
-            </h3>
-            <address class="not-italic text-gray-700 text-lg leading-relaxed">
-              8100 W. 95th Street<br>
-              Overland Park, KS 66212
-            </address>
-          </div>
-
-          <a
-            href="tel:+19133417373"
-            class="flex items-center gap-3 text-gray-700 hover:text-greek-blue transition-colors group w-fit"
-          >
-            <span class="w-11 h-11 bg-greek-blue-lt rounded-full flex items-center justify-center text-greek-blue group-hover:bg-greek-blue group-hover:text-white transition-colors" aria-hidden="true">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-              </svg>
-            </span>
-            <span class="font-semibold text-lg">(913) 341-7373</span>
-          </a>
-
-          <a
-            href="https://maps.google.com/?q=8100+W+95th+Street+Overland+Park+KS+66212"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 bg-greek-blue hover:bg-greek-blue-dk text-white font-semibold px-6 py-3 rounded-full transition-colors shadow-md focus:outline-none focus:ring-4 focus:ring-greek-blue/40"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-            Get Directions
-          </a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -660,22 +267,18 @@
   ══════════════════════════════════════════════════ -->
   <footer class="bg-greek-blue-dk text-white py-14 px-4">
     <div class="max-w-5xl mx-auto">
-
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
         <div>
           <h4 class="font-display text-xl font-bold mb-3">Greek Festival 2026</h4>
           <p class="text-white/60 text-sm leading-relaxed">
-            Celebrating Greek culture, tradition, and community at
-            St. Dionysios Greek Orthodox Church in Overland Park, KS.
+            Thank you for celebrating Greek culture, tradition, and community with us
+            at St. Dionysios Greek Orthodox Church in Overland Park, KS.
           </p>
         </div>
         <div>
           <h4 class="font-semibold text-xs uppercase tracking-widest text-white/40 mb-4">Quick Links</h4>
           <ul class="space-y-2 text-white/75 text-sm">
-            <li><a href="#hours"    class="hover:text-white transition-colors">Festival Hours</a></li>
-            <li><a href="#dancing"  class="hover:text-white transition-colors">Dance Schedule</a></li>
-            <li><a href="menu.html" class="hover:text-white transition-colors">Menu</a></li>
-            <li><a href="#location" class="hover:text-white transition-colors">Location &amp; Directions</a></li>
+            <li><a href="thanks.html" class="hover:text-white transition-colors">Festival 2026</a></li>
             <li><a href="https://stdionysios.org" class="hover:text-white transition-colors">Our Church ↗</a></li>
           </ul>
         </div>
@@ -689,7 +292,6 @@
           </address>
         </div>
       </div>
-
       <div class="border-t border-white/10 pt-6 text-center text-white/35 text-xs">
         &copy; 2026 St. Dionysios Greek Orthodox Church &mdash; All rights reserved.
       </div>
